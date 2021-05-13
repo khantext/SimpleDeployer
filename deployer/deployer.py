@@ -138,7 +138,7 @@ def remove(src, dest, no_remove, verbose):
                 if allowed_to_remove:
                     full_path = os.path.join(dest, rel_dir_path)
                     shutil.rmtree(full_path)
-                elif not allowed_to_overwrite and verbose:
+                elif not allowed_to_remove and verbose:
                     print(f"Skipping because not allowed to remove {rel_dir_path}")
         for file in files:
             rel_file_path = os.path.join(os.path.relpath(dest_dir, dest), file)
